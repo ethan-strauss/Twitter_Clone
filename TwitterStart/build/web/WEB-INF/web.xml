@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <!-- Servlet Definitions -->
+    <servlet>
+        <servlet-name>Twitter</servlet-name>
+        <servlet-class>twitter.Twitter</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Login</servlet-name>
+        <servlet-class>twitter.Login</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Profile</servlet-name>
+        <servlet-class>twitter.Profile</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Upload</servlet-name>
+        <servlet-class>twitter.Upload</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>GetImage</servlet-name>
+        <servlet-class>twitter.GetImage</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>FollowUser</servlet-name>
+        <servlet-class>twitter.FollowUser</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CreateTweet</servlet-name>
+        <servlet-class>twitter.CreateTweet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LikeTweet</servlet-name>
+        <servlet-class>twitter.LikeTweet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>PostTweet</servlet-name>
+        <servlet-class>twitter.PostTweet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>TweetController</servlet-name>
+        <servlet-class>twitter.TweetController</servlet-class>
+    </servlet>
+
+    <!-- FollowServlet Definition and Mapping -->
+    <servlet>
+        <servlet-name>FollowServlet</servlet-name>
+        <servlet-class>twitter.FollowServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FollowServlet</servlet-name>
+        <url-pattern>/FollowServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- Servlet Mappings -->
+    <servlet-mapping>
+        <servlet-name>Twitter</servlet-name>
+        <url-pattern>/Twitter</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Login</servlet-name>
+        <url-pattern>/Login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Profile</servlet-name>
+        <url-pattern>/Profile</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Upload</servlet-name>
+        <url-pattern>/Upload</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetImage</servlet-name>
+        <url-pattern>/GetImage</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FollowUser</servlet-name>
+        <url-pattern>/FollowUser</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CreateTweet</servlet-name>
+        <url-pattern>/CreateTweet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LikeTweet</servlet-name>
+        <url-pattern>/LikeTweet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PostTweet</servlet-name>
+        <url-pattern>/PostTweet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TweetController</servlet-name>
+        <url-pattern>/TweetController</url-pattern>
+    </servlet-mapping>
+
+    <!-- JSP Mappings -->
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+    
+    <!-- JSP Configuration -->
+    <servlet>
+        <servlet-name>jsp</servlet-name>
+        <servlet-class>org.apache.jasper.servlet.JspServlet</servlet-class>
+        <init-param>
+            <param-name>fork</param-name>
+            <param-value>false</param-value>
+        </init-param>
+        <init-param>
+            <param-name>xpoweredBy</param-name>
+            <param-value>false</param-value>
+        </init-param>
+        <load-on-startup>3</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>jsp</servlet-name>
+        <url-pattern>*.jsp</url-pattern>
+    </servlet-mapping>
+
+    <!-- Session Configuration -->
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
+
+    <!-- Error Pages -->
+    <error-page>
+        <error-code>404</error-code>
+        <location>/error.jsp</location>
+    </error-page>
+</web-app>
